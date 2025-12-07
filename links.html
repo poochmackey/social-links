@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pooch Mackey — Links</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <style>
+    :root {
+      --bg:#020617;
+      --card:#020617;
+      --card-alt:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#22c55e;
+      --accent-soft:rgba(34,197,94,0.12);
+      --border:#1f2937;
+      --shadow:0 18px 45px rgba(0,0,0,0.55);
+      --radius:18px;
+    }
+
+    * {
+      box-sizing:border-box;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    body {
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      background:
+        radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      color:var(--text);
+    }
+
+    .card {
+      width:100%;
+      max-width:420px;
+      background:linear-gradient(145deg,#020617,#020617 40%,#020617 100%);
+      border-radius:26px;
+      padding:22px 18px 20px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .top-row {
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:12px;
+    }
+
+    .avatar {
+      width:70px;
+      height:70px;
+      border-radius:999px;
+      overflow:hidden;
+      border:2px solid rgba(148,163,184,0.35);
+      flex-shrink:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:radial-gradient(circle at 30% 0,#22c55e33 0, #020617 45%, #000 100%);
+    }
+
+    .avatar img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .name-block {
+      flex:1;
+      min-width:0;
+    }
+
+    .name {
+      font-size:1.05rem;
+      font-weight:600;
+      letter-spacing:0.02em;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .tag {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:4px;
+      padding:3px 9px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:0.7rem;
+      text-transform:uppercase;
+      letter-spacing:0.09em;
+      border:1px solid rgba(34,197,94,0.35);
+    }
+
+    .bio {
+      margin-top:10px;
+      font-size:0.78rem;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .links {
+      margin-top:18px;
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+    }
+
+    .link-btn {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      padding:11px 12px;
+      border-radius:var(--radius);
+      background:var(--card-alt);
+      border:1px solid rgba(31,41,55,0.95);
+      text-decoration:none;
+      color:var(--text);
+      font-size:0.86rem;
+      transition:
+        background 0.15s ease,
+        transform 0.12s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .link-left {
+      display:flex;
+      align-items:center;
+      gap:9px;
+      min-width:0;
+    }
+
+    .link-icon {
+      width:26px;
+      height:26px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:0.95rem;
+      background:#020617;
+      border:1px solid rgba(55,65,81,0.9);
+      flex-shrink:0;
+    }
+
+    .link-labels {
+      display:flex;
+      flex-direction:column;
+      gap:1px;
+      min-width:0;
+    }
+
+    .link-title {
+      font-weight:500;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      overflow:hidden;
+    }
+
+    .link-sub {
+      font-size:0.7rem;
+      color:var(--muted);
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      overflow:hidden;
+    }
+
+    .link-arrow {
+      font-size:1rem;
+      opacity:0.6;
+      flex-shrink:0;
+    }
+
+    .link-btn:hover {
+      background:#111827;
+      border-color:rgba(55,65,81,1);
+      transform:translateY(-1px);
+      box-shadow:0 12px 30px rgba(0,0,0,0.6);
+    }
+
+    .link-btn:active {
+      transform:translateY(0);
+      box-shadow:none;
+    }
+
+    .link-btn.primary {
+      background:var(--accent);
+      color:#020617;
+      border-color:var(--accent);
+    }
+
+    .link-btn.primary .link-icon {
+      background:#1a2e22;
+      border-color:rgba(15,23,42,0.9);
+      color:var(--accent);
+    }
+
+    .link-btn.primary .link-sub {
+      color:#022c22;
+    }
+
+    .link-btn.primary .link-arrow {
+      opacity:0.9;
+    }
+
+    .footer {
+      margin-top:18px;
+      text-align:center;
+      font-size:0.68rem;
+      color:#4b5563;
+    }
+
+    .footer span {
+      color:var(--accent);
+    }
+
+    @media (max-width:480px) {
+      .card {
+        padding:18px 14px 16px;
+        border-radius:22px;
+      }
+
+      .avatar {
+        width:60px;
+        height:60px;
+      }
+
+      .name {
+        font-size:1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <!-- TOP: avatar + name -->
+    <header class="top-row">
+      <div class="avatar">
+        <!-- For web hosting, change this to a relative file like "artpooch.png" or a full https:// URL -->
+        <img src="artpooch.png" alt="My avatar" />
+      </div>
+      <div class="name-block">
+        <div class="name">
+          <span>Pooch Mackey</span>
+        </div>
+        <div class="tag">
+          <span>🎧</span>
+          <span>Electronic Music · DJ</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- SHORT BIO -->
+    <p class="bio">
+      Tech House · Bass House · Peak-time vibes.
+    </p>
+
+    <!-- LINKS LIST -->
+    <section class="links">
+      <!-- TIKTOK = MAIN (PRIMARY) -->
+      <a class="link-btn primary" href="https://www.tiktok.com/@poochmackey" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <div class="link-icon">🎶</div>
+          <div class="link-labels">
+            <div class="link-title">TikTok</div>
+            <div class="link-sub">@poochmackey</div>
+          </div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+
+      <!-- TWITCH -->
+      <a class="link-btn" href="https://www.twitch.tv/poochmackey" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <div class="link-icon">💜</div>
+          <div class="link-labels">
+            <div class="link-title">Twitch</div>
+            <div class="link-sub">@poochmackey</div>
+          </div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+
+      <!-- INSTAGRAM -->
+      <a class="link-btn" href="https://www.instagram.com/poochmackey" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <div class="link-icon">📸</div>
+          <div class="link-labels">
+            <div class="link-title">Instagram</div>
+            <div class="link-sub">@poochmackey</div>
+          </div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+<!-- SPOTIFY -->
+      <a class="link-btn" href="https://open.spotify.com/user/poochmackey" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <div class="link-icon">🟢</div>
+          <div class="link-labels">
+            <div class="link-title">Spotify</div>
+            <div class="link-sub">Playlists & releases</div>
+          </div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+      <!-- NEW MUSIC FRIDAY - PLAYLIST -->
+      <a class="link-btn" href="https://open.spotify.com/playlist/6qY18P50EIKqr0AjG0zWYz?si=HszbAG_KQDO6JiJA_g9YIQ" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <div class="link-icon">🎧</div>
+          <div class="link-labels">
+            <div class="link-title">New Music Friday - Spotify Playlist</div>
+            <div class="link-sub">@poochmackey</div>
+          </div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+
+      <!-- SOUNDCLOUD -->
+      <a class="link-btn" href="https://soundcloud.com/pooch-mackey" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <div class="link-icon">☁️</div>
+          <div class="link-labels">
+            <div class="link-title">SoundCloud</div>
+            <div class="link-sub">Bootlegs & Recorded LIVE sets</div>
+          </div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span>●</span> Link hub · made by Pooch Mackey
+    </div>
+  </main>
+</body>
+</html>
